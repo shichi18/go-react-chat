@@ -1,4 +1,15 @@
-/* 全体の基本スタイル。色の CSS 変数は Step 1 でワイヤーフレームの値を仮に入れる */
+/* 色はワイヤーフレームの値を仮に入れている。配色は Step 5 で確定する */
+:root {
+  --color_bg: #f4f4f5;
+  --color_surface: #ffffff;
+  --color_border: #d4d4d8;
+  --color_border_strong: #a1a1aa;
+  --color_text: #18181b;
+  --color_text_muted: #52525b;
+  --color_primary: #1e3a8a;
+  --color_on_primary: #ffffff;
+}
+
 *,
 *::before,
 *::after {
@@ -7,5 +18,10 @@
 
 body {
   margin: 0;
-  font-family: system-ui, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Hiragino Sans',
+    sans-serif;
+  color: var(--color_text);
 }

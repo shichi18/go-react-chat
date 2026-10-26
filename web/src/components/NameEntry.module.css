@@ -1,0 +1,56 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--color_bg);
+}
+
+.card {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px;
+  background: var(--color_surface);
+  border: 1px solid var(--color_border);
+  border-radius: 8px;
+}
+
+.title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 14px;
+  color: var(--color_text_muted);
+}
+
+.input {
+  height: 44px;
+  padding: 0 12px;
+  font-size: 15px;
+  border: 1px solid var(--color_border_strong);
+  border-radius: 6px;
+}
+
+.button {
+  height: 44px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color_on_primary);
+  background: var(--color_primary);
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
