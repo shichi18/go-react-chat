@@ -1,4 +1,4 @@
-import type { ChangeEvent, FormEvent } from 'react'
+import { type ChangeEvent, type FormEvent, useState } from 'react'
 import styles from './NameEntry.module.css'
 
 type NameEntryProps = {
@@ -8,17 +8,18 @@ type NameEntryProps = {
 
 // ニックネームを入力して入室する画面
 function NameEntry({ on_enter }: NameEntryProps) {
-  // TODO(human): 入力中の名前を state で持ち、入力欄の変更と submit を処理する
-  // - input_value: 入力欄に表示する値
-  // - handle_change: 入力欄の値を state に入れる
-  // - handle_submit: ページの再読み込みを止め、前後の空白を取り除いて空なら何もしない。空でなければ on_enter に渡す
-  const input_value = ''
+  const [input_value, set_input_value] = useState('')
+
   const handle_change = (event: ChangeEvent<HTMLInputElement>) => {
-    void event
+    set_input_value(event.target.value)
   }
+
   const handle_submit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    void on_enter
+    const name = input_value.trim()
+    if (name === '') return
+
+    on_enter(name)
   }
 
   return (
