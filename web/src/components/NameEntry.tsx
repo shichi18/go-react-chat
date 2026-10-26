@@ -1,4 +1,4 @@
-import { type ChangeEvent, type FormEvent, useState } from 'react'
+import { type ChangeEvent, type SubmitEvent, useState } from 'react'
 import styles from './NameEntry.module.css'
 
 type NameEntryProps = {
@@ -14,7 +14,7 @@ function NameEntry({ on_enter }: NameEntryProps) {
     set_input_value(event.target.value)
   }
 
-  const handle_submit = (event: FormEvent<HTMLFormElement>) => {
+  const handle_submit = (event: SubmitEvent<HTMLFormElement>) => {
     event.preventDefault()
     const name = input_value.trim()
     if (name === '') return
